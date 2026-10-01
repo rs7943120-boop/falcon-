@@ -1,0 +1,22 @@
+.App {
+  min-height: 100vh;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 20px;
+  text-align: center;
+}
+
+.page-content h1 {
+  margin-bottom: 16px;
+  color: #202b35;
+  font-size: 38px;
+}
+
+.page-content p {
+  color: #5f6b75;
+  font-size: 18px;
+}
+
