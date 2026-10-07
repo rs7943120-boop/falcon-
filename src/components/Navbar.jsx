@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 import logo from "../assets/falcon-logo.png";
-
+import brochure from "../assets/brocher.pdf";
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -40,7 +40,8 @@ const Navbar = () => {
     },
     {
       name: "Download Brochure",
-      link: "/download-brochure",
+      link: brochure,
+      download: true,
       icon: <Download size={17} />,
     },
     {
@@ -57,51 +58,7 @@ const Navbar = () => {
       {/* TOP INFORMATION BAR */}
       {/* ================================================= */}
 
-      <div className="border-b bg-[#f7f9fc]">
 
-        <div className="mx-auto flex h-[45px] max-w-[1500px] items-center justify-between px-5 lg:px-8">
-
-          {/* Location */}
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-
-            <MapPin
-              size={16}
-              className="shrink-0 text-[#087fe5]"
-            />
-
-            <span>
-              GRD/2 Vijaya Bhavan, CTS-61, Prabhat Colony,
-              Santacruz East Mumbai
-            </span>
-
-          </div>
-
-          {/* Contact */}
-          <div className="hidden items-center gap-6 md:flex">
-
-            <a
-              href="mailto:info@falconinternationalco.com"
-              className="flex items-center gap-2 text-[#087fe5]"
-            >
-              <Mail size={15} />
-
-              info@falconinternationalco.com
-            </a>
-
-            <a
-              href="tel:+919320005152"
-              className="flex items-center gap-2"
-            >
-              <Phone size={15} />
-
-              +91 93200 05152
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
 
 
       {/* ================================================= */}
@@ -293,8 +250,18 @@ const Navbar = () => {
 
           <div className="hidden items-center lg:flex">
 
-            {menuItems.map((item, index) => (
-
+            {menuItems.map((item, index) => item.download ? (
+              <a
+                key={index}
+                href={item.link}
+                download="Falcon-International-Brochure.pdf"
+                className="group relative flex h-16 items-center gap-2 px-5 text-sm font-medium text-[#273b57] transition hover:text-[#087fe5]"
+              >
+                {item.icon}
+                {item.name}
+                <span className="absolute bottom-0 left-1/2 h-[3px] w-0 -translate-x-1/2 bg-[#087fe5] transition-all group-hover:w-8" />
+              </a>
+            ) : (
               <NavLink
                 key={index}
                 to={item.link}
@@ -336,7 +303,6 @@ const Navbar = () => {
                 />
 
               </NavLink>
-
             ))}
 
           </div>
@@ -381,8 +347,21 @@ const Navbar = () => {
 
         <div className="border-t bg-white px-5 py-5 shadow-lg lg:hidden">
 
-          {menuItems.map((item, index) => (
-
+          {menuItems.map((item, index) => item.download ? (
+            <a
+              key={index}
+              href={item.link}
+              download="Falcon-International-Brochure.pdf"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-between border-b py-4 text-gray-700"
+            >
+              <div className="flex items-center gap-3">
+                {item.icon}
+                {item.name}
+              </div>
+              <ArrowRight size={15} />
+            </a>
+          ) : (
             <Link
               key={index}
               to={item.link}
@@ -408,7 +387,6 @@ const Navbar = () => {
               <ArrowRight size={15} />
 
             </Link>
-
           ))}
 
 

@@ -8,6 +8,7 @@ import foreQuarterProduct from "../assets/frozen meat/Buffalo Fore Quarter Cuts.
 import vealProduct from "../assets/frozen meat/Buffalo Veal Cuts.png";
 import offalsProduct from "../assets/frozen meat/Buffalo Offals.png";
 import buffaloCutsDiagram from "../assets/frozen meat/hero.png";
+
 import apedaCertification from "../assets/apeda.png";
 import halalCertification from "../assets/halal.png";
 import fssaiCertification from "../assets/fssai.jpg";
@@ -23,3152 +24,850 @@ import {
   Award,
   ArrowRight,
   ArrowUpRight,
+  CheckCircle2,
 } from "lucide-react";
 
+const products = [
+  {
+    title: "Buffalo Hind Quarter",
+    img: hindQuarterProduct,
+    desc: "Premium hind quarter cuts selected for quality, consistency and international export requirements.",
+    link: "/frozen-meat/hind-quarter",
+  },
+  {
+    title: "Buffalo Fore Quarter",
+    img: foreQuarterProduct,
+    desc: "Carefully prepared fore quarter cuts offering dependable quality for global meat buyers.",
+    link: "/frozen-meat/fore-quarter",
+  },
+  {
+    title: "Buffalo Veal Cuts",
+    img: vealProduct,
+    desc: "Selected veal cuts processed with careful handling and maintained under controlled conditions.",
+    link: "/frozen-meat/veal",
+  },
+  {
+    title: "Buffalo Offals",
+    img: offalsProduct,
+    desc: "A selected range of buffalo offal products prepared for international market requirements.",
+    link: "/frozen-meat/offals",
+  },
+];
+
+const features = [
+  {
+    icon: Truck,
+    title: "Reliable Supply",
+    desc: "Consistent sourcing with dependable delivery schedules.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Control",
+    desc: "Careful handling and strict quality checks throughout.",
+  },
+  {
+    icon: Package,
+    title: "Flexible Packing",
+    desc: "Packing solutions designed around buyer requirements.",
+  },
+  {
+    icon: Globe2,
+    title: "Global Reach",
+    desc: "Export-oriented solutions for international buyers.",
+  },
+  {
+    icon: Snowflake,
+    title: "Cold Chain",
+    desc: "Controlled frozen handling from processing to dispatch.",
+  },
+  {
+    icon: Award,
+    title: "Export Standards",
+    desc: "Documentation and processes aligned with export needs.",
+  },
+];
+
+const certifications = [
+  { name: "APEDA", logo: apedaCertification },
+  { name: "HALAL", logo: halalCertification },
+  { name: "FSSAI", logo: fssaiCertification },
+  { name: "ISO", logo: isoCertification },
+  { name: "HACCP", logo: haccpCertification },
+  { name: "QUALITY", Icon: Award },
+];
+
 const FrozenMeat = () => {
-
-
-const products=[
-{
-title:"Buffalo Hind Quarter Cuts",
-img:hindQuarterProduct,
-desc:"Premium frozen buffalo hind quarter cuts."
-},
-{
-title:"Buffalo Fore Quarter Cuts",
-img:foreQuarterProduct,
-desc:"Quality fore quarter cuts prepared for export."
-},
-{
-title:"Buffalo Veal Cuts",
-img:vealProduct,
-desc:"Processed under strict hygiene standards."
-},
-{
-title:"Buffalo Offals",
-img:offalsProduct,
-desc:"Wide range of buffalo offal products."
-}
-];
-
-
-
-const features=[
-["Reliable Supply","Consistent quality & timely delivery"],
-["Consistent Quality","Strict quality control"],
-["Container Loading","Secure container stuffing"],
-["Customized Packing","As per buyer requirement"],
-["Experienced Team","Global export expertise"],
-["Fast Documentation","Smooth export process"]
-];
-
-
-
-return(
-
-<div className="bg-white text-[#071426] overflow-hidden">
-
-
-
-{/* HERO */}
-<section className="relative min-h-screen overflow-hidden bg-[#020812]">
-
-  {/* ================= BACKGROUND ================= */}
-  <motion.div
-    className="absolute inset-0"
-    initial={{ scale: 1.12 }}
-    animate={{
-      scale: [1.12, 1.04, 1.08],
-      x: [0, -8, 0],
-    }}
-    transition={{
-      duration: 18,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  >
-    <img
-      src={frozenMeatHero}
-      alt="Premium frozen buffalo meat export"
-      className="w-full h-full object-cover object-center"
-    />
-  </motion.div>
-
-
-  {/* Bottom cinematic fade */}
-  <div
-    className="
-      absolute inset-x-0 bottom-0
-      h-64
-      bg-gradient-to-t
-      from-[#020812]
-      via-[#020812]/60
-      to-transparent
-    "
-  />
-
-  {/* ================= AMBIENT GLOW ================= */}
-
-  <motion.div
-    className="
-      absolute
-      -left-40
-      top-[25%]
-      w-[550px]
-      h-[550px]
-      rounded-full
-      bg-blue-600/10
-      blur-[150px]
-    "
-    animate={{
-      x: [0, 80, 0],
-      y: [0, 50, 0],
-      opacity: [0.35, 0.6, 0.35],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
-
-  <motion.div
-    className="
-      absolute
-      right-[10%]
-      top-[15%]
-      w-[300px]
-      h-[300px]
-      rounded-full
-      bg-cyan-400/5
-      blur-[120px]
-    "
-    animate={{
-      scale: [1, 1.35, 1],
-      opacity: [0.2, 0.5, 0.2],
-    }}
-    transition={{
-      duration: 10,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
-
-  {/* ================= LIGHT STREAK ================= */}
-
-  <motion.div
-    className="
-      absolute
-      left-0
-      top-[35%]
-      w-[420px]
-      h-px
-      bg-gradient-to-r
-      from-transparent
-      via-blue-400/30
-      to-transparent
-      blur-sm
-    "
-    animate={{
-      x: ["-100%", "180%"],
-      opacity: [0, 1, 0],
-    }}
-    transition={{
-      duration: 7,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 2,
-    }}
-  />
-
-  {/* ================= FLOATING PARTICLES ================= */}
-
-  {[...Array(14)].map((_, i) => (
-    <motion.span
-      key={i}
-      className="
-        absolute
-        w-1 h-1
-        rounded-full
-        bg-blue-300/40
-      "
-      style={{
-        left: `${8 + (i * 7) % 88}%`,
-        top: `${12 + (i * 13) % 72}%`,
-      }}
-      animate={{
-        y: [-10, -45, -10],
-        opacity: [0, 0.7, 0],
-        scale: [0.7, 1.3, 0.7],
-      }}
-      transition={{
-        duration: 4 + (i % 4),
-        repeat: Infinity,
-        delay: i * 0.35,
-        ease: "easeInOut",
-      }}
-    />
-  ))}
-
-  {/* ================= CONTENT ================= */}
-
-  <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/45 to-transparent pointer-events-none" />
-
-  <div className="relative z-10 min-h-screen max-w-[1450px] mx-auto px-6 lg:px-12">
-
-    <div className="min-h-screen flex items-center">
-
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className="max-w-[760px] pt-24 pb-36"
-      >
-
-        {/* ================= BADGE ================= */}
-
+  return (
+    <div className="overflow-hidden bg-white text-[#071426]">
+      {/* HERO */}
+      <section className="relative min-h-screen overflow-hidden bg-[#020812]">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.25,
-            duration: 0.7,
-          }}
-          whileHover={{
-            scale: 1.04,
-            borderColor: "rgba(96,165,250,0.4)",
-          }}
-          className="
-            inline-flex
-            items-center
-            gap-3
-            px-4 py-2.5
-            rounded-full
-            border border-white/15
-            bg-white/[0.06]
-            backdrop-blur-xl
-            shadow-[0_8px_30px_rgba(0,0,0,0.2)]
-            mb-8
-            cursor-default
-          "
-        >
-
-          <span className="relative flex h-2.5 w-2.5">
-
-            <motion.span
-              className="
-                absolute
-                inline-flex
-                h-full w-full
-                rounded-full
-                bg-blue-400
-              "
-              animate={{
-                scale: [1, 2, 1],
-                opacity: [0.7, 0, 0.7],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            />
-
-            <span
-              className="
-                relative
-                inline-flex
-                rounded-full
-                h-2.5 w-2.5
-                bg-blue-400
-                shadow-[0_0_12px_rgba(96,165,250,0.8)]
-              "
-            />
-
-          </span>
-
-          <span
-            className="
-              text-[10px]
-              md:text-xs
-              tracking-[0.28em]
-              font-semibold
-              text-[#071426]
-              uppercase
-            "
-          >
-            Frozen Meat Export
-          </span>
-
-          <motion.span
-            animate={{ x: [0, 4, 0] }}
-            transition={{
-              duration: 1.8,
-              repeat: Infinity,
-            }}
-            className="text-blue-400"
-          >
-            →
-          </motion.span>
-
-        </motion.div>
-
-
-        {/* ================= HEADING ================= */}
-
-        <h1
-          className="
-            text-[#071426]
-            font-bold
-            tracking-[-0.045em]
-            text-5xl
-            sm:text-6xl
-            lg:text-[78px]
-            leading-[0.94]
-          "
-        >
-
-          <motion.span
-            className="block"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.35,
-              duration: 0.8,
-            }}
-          >
-            Premium Frozen
-          </motion.span>
-
-          <motion.span
-            className="
-              block
-              mt-3
-              text-[#071426]
-            "
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              backgroundPosition: ["0% center", "100% center", "0% center"],
-            }}
-            transition={{
-              opacity: {
-                delay: 0.5,
-                duration: 0.8,
-              },
-              y: {
-                delay: 0.5,
-                duration: 0.8,
-              },
-              backgroundPosition: {
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-          >
-            Meat Exports
-          </motion.span>
-
-          <motion.span
-            className="block mt-3 text-[#071426]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.65,
-              duration: 0.8,
-            }}
-          >
-            From India
-          </motion.span>
-
-        </h1>
-
-
-        {/* ================= DESCRIPTION ================= */}
-
-        <motion.p
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.85,
-            duration: 0.8,
-          }}
-          className="
-            mt-8
-            max-w-[630px]
-            text-base
-            md:text-lg
-            leading-8
-            text-[#1e293b]
-          "
-        >
-          Supplying high-quality halal certified frozen buffalo meat
-          and related products to trusted importers, distributors
-          and food service buyers across international markets.
-        </motion.p>
-
-
-        {/* ================= CTA ================= */}
-
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 1,
-            duration: 0.8,
-          }}
-          className="flex flex-wrap items-center gap-4 mt-10"
-        >
-
-          {/* PRIMARY BUTTON */}
-
-          <motion.button
-            whileHover={{
-              scale: 1.04,
-              boxShadow:
-                "0 15px 55px rgba(37,99,235,0.5)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            className="
-              group
-              relative
-              flex items-center gap-3
-              bg-blue-600
-              hover:bg-blue-500
-              text-white
-              px-7 py-4
-              rounded-full
-              font-semibold
-              overflow-hidden
-              transition-all
-              duration-300
-            "
-          >
-
-            {/* Shine */}
-            <motion.span
-              className="
-                absolute
-                inset-y-0
-                -left-20
-                w-16
-                bg-white/20
-                skew-x-[-20deg]
-              "
-              animate={{
-                x: ["0%", "600%"],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatDelay: 2,
-              }}
-            />
-
-            <span className="relative z-10">
-              Explore Products
-            </span>
-
-            <span
-              className="
-                relative z-10
-                w-8 h-8
-                rounded-full
-                bg-white/15
-                flex items-center justify-center
-                overflow-hidden
-              "
-            >
-              <motion.span
-                className="flex"
-                whileHover={{ x: 4 }}
-              >
-                <ArrowRight size={17} />
-              </motion.span>
-            </span>
-
-          </motion.button>
-
-
-          {/* SECONDARY BUTTON */}
-
-          <motion.button
-            whileHover={{
-              scale: 1.04,
-              backgroundColor: "rgba(255,255,255,0.10)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            className="
-              group
-              flex items-center gap-3
-              px-7 py-4
-              rounded-full
-              border border-white/20
-              bg-white/[0.05]
-              backdrop-blur-xl
-              text-white
-              font-semibold
-              transition-all
-              duration-300
-            "
-          >
-
-            <span
-              className="
-                w-8 h-8
-                rounded-full
-                border border-white/20
-                flex items-center justify-center
-              "
-            >
-              <motion.span
-                animate={{ y: [0, 3, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                }}
-              >
-                ↓
-              </motion.span>
-            </span>
-
-            Download Brochure
-
-          </motion.button>
-
-        </motion.div>
-
-
-        {/* ================= TRUST ITEMS ================= */}
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 1.2,
-            duration: 0.8,
-          }}
-          className="
-            flex flex-wrap
-            items-center
-            gap-x-8
-            gap-y-5
-            mt-12
-            pt-7
-            border-t border-white/10
-            max-w-[720px]
-          "
-        >
-
-          {/* QUALITY */}
-
-          <motion.div
-            whileHover={{ y: -4 }}
-            className="flex items-center gap-3"
-          >
-
-            <div
-              className="
-                w-11 h-11
-                rounded-xl
-                bg-blue-500/10
-                border border-blue-400/20
-                flex items-center justify-center
-                shadow-[0_0_25px_rgba(59,130,246,0.08)]
-              "
-            >
-              <ShieldCheck
-                size={20}
-                className="text-blue-400"
-              />
-            </div>
-
-            <div>
-              <p className="text-[#071426] text-sm font-semibold">
-                Premium Quality
-              </p>
-
-              <p className="text-[#475569] text-xs mt-0.5">
-                Export Grade
-              </p>
-            </div>
-
-          </motion.div>
-
-
-          <div className="hidden sm:block w-px h-9 bg-white/10" />
-
-
-          {/* GLOBAL */}
-
-          <motion.div
-            whileHover={{ y: -4 }}
-            className="flex items-center gap-3"
-          >
-
-            <div
-              className="
-                w-11 h-11
-                rounded-xl
-                bg-blue-500/10
-                border border-blue-400/20
-                flex items-center justify-center
-              "
-            >
-              <Globe2
-                size={20}
-                className="text-blue-400"
-              />
-            </div>
-
-            <div>
-              <p className="text-[#071426] text-sm font-semibold">
-                Global Standards
-              </p>
-
-              <p className="text-[#475569] text-xs mt-0.5">
-                International Supply
-              </p>
-            </div>
-
-          </motion.div>
-
-
-          <div className="hidden sm:block w-px h-9 bg-white/10" />
-
-
-          {/* COLD CHAIN */}
-
-          <motion.div
-            whileHover={{ y: -4 }}
-            className="flex items-center gap-3"
-          >
-
-            <div
-              className="
-                w-11 h-11
-                rounded-xl
-                bg-blue-500/10
-                border border-blue-400/20
-                flex items-center justify-center
-              "
-            >
-              <Truck
-                size={20}
-                className="text-blue-400"
-              />
-            </div>
-
-            <div>
-              <p className="text-[#071426] text-sm font-semibold">
-                Cold Chain
-              </p>
-
-              <p className="text-[#475569] text-xs mt-0.5">
-                Reliable Delivery
-              </p>
-            </div>
-
-          </motion.div>
-
-        </motion.div>
-
-      </motion.div>
-
-    </div>
-
-
-    {/* ================= BOTTOM RIGHT ================= */}
-
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{
-        delay: 1.5,
-        duration: 0.8,
-      }}
-      className="
-        absolute
-        right-8 lg:right-12
-        bottom-10
-        hidden md:flex
-        items-center gap-3
-        text-white/50
-        text-xs
-        tracking-[0.2em]
-        uppercase
-      "
-    >
-
-      <motion.span
-        animate={{
-          width: ["20px", "38px", "20px"],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-        }}
-        className="h-px bg-blue-400/60"
-      />
-
-      Premium Indian Export
-
-    </motion.div>
-
-
-    {/* ================= SCROLL ================= */}
-
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        delay: 1.8,
-      }}
-      className="
-        absolute
-        left-1/2
-        bottom-7
-        -translate-x-1/2
-        hidden lg:flex
-        flex-col
-        items-center
-        gap-2
-        text-[#475569]
-      "
-    >
-
-      <span
-        className="
-          text-[9px]
-          tracking-[0.3em]
-          uppercase
-        "
-      >
-        Scroll
-      </span>
-
-      <div className="relative w-px h-10 overflow-hidden">
-
-        <motion.div
-          className="
-            absolute
-            top-[-100%]
-            left-0
-            w-px
-            h-full
-            bg-gradient-to-b
-            from-transparent
-            via-blue-400
-            to-transparent
-          "
+          className="absolute inset-0"
+          initial={{ scale: 1.08 }}
           animate={{
-            y: ["0%", "200%"],
+            scale: [1.08, 1.03, 1.06],
+            x: [0, -5, 0],
           }}
           transition={{
-            duration: 1.8,
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut",
           }}
+        >
+          <img
+            src={frozenMeatHero}
+            alt="Premium frozen buffalo meat export"
+            className="h-full w-full object-cover object-center brightness-[1.03] contrast-[1.08] saturate-[1.08]"
+          />
+        </motion.div>
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/5" />
+
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[72%] bg-gradient-to-r from-white via-white/95 via-[48%] to-transparent" />
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#020812]/80 via-transparent to-transparent" />
+
+        <motion.div
+          className="pointer-events-none absolute -left-40 top-[25%] h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[140px]"
+          animate={{
+            x: [0, 60, 0],
+            y: [0, 40, 0],
+            opacity: [0.25, 0.5, 0.25],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
 
-      </div>
-
-    </motion.div>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-{/* CERTIFICATION BAR */}
-
-
-<section className="py-8 bg-white border-y border-slate-100">
-
-  <div className="max-w-6xl mx-auto px-6">
-
-    <div className="
-      grid
-      grid-cols-2
-      sm:grid-cols-3
-      md:grid-cols-6
-      gap-8
-      items-center
-      justify-items-center
-    ">
-
-      {[
-        {
-          name: "APEDA",
-          logo: apedaCertification,
-        },
-        {
-          name: "HALAL",
-          logo: halalCertification,
-        },
-        {
-          name: "FSSAI",
-          logo: fssaiCertification,
-        },
-        {
-          name: "ISO",
-          logo: isoCertification,
-        },
-        {
-          name: "HACCP",
-          logo: haccpCertification,
-        },
-        {
-          name: "CERTIFIED",
-          Icon: Award,
-        },
-      ].map((item, i) => (
-
         <motion.div
-          key={item.name}
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
-          transition={{
-            delay: i * 0.08,
-            duration: 0.5,
-          }}
-          whileHover={{
-            y: -4,
-            scale: 1.04,
-          }}
-          className="
-            group
-            flex
-            flex-col
-            items-center
-            justify-center
-            min-h-[90px]
-            transition-all
-          "
-        >
+          className="pointer-events-none absolute right-[12%] top-[15%] h-[280px] w-[280px] rounded-full bg-cyan-400/10 blur-[120px]"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.35, 0.15] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
 
-          <div className="
-            h-14
-            w-32
-            flex
-            items-center
-            justify-center
-          ">
-
-            {item.logo ? (
-              <img
-                src={item.logo}
-                alt={`${item.name} certification`}
-                className="max-h-14 max-w-[120px] object-contain transition-all duration-300 group-hover:scale-105"
-              />
-            ) : (
-              <item.Icon aria-hidden="true" size={48} strokeWidth={1.6} className="text-[#438A20]" />
-            )}</div>
-
-          <p className="
-            mt-3
-            text-[11px]
-            tracking-[0.15em]
-            text-[#475569]
-            font-semibold
-            uppercase
-          ">
-            {item.name}
-          </p>
-
-        </motion.div>
-
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-{/* ABOUT */}
-
-<section className="relative py-24 lg:py-32 bg-white overflow-hidden">
-
-  {/* =========================================================
-      BACKGROUND DECORATION
-  ========================================================= */}
-
-  <div
-    className="
-      absolute
-      top-0
-      right-0
-      w-[500px]
-      h-[500px]
-      bg-blue-50
-      rounded-full
-      blur-3xl
-      opacity-60
-      -translate-y-1/2
-      translate-x-1/3
-      pointer-events-none
-    "
-  />
-
-  <div
-    className="
-      absolute
-      bottom-0
-      left-0
-      w-[350px]
-      h-[350px]
-      bg-green-50
-      rounded-full
-      blur-3xl
-      opacity-40
-      translate-y-1/2
-      -translate-x-1/3
-      pointer-events-none
-    "
-  />
-
-
-  {/* =========================================================
-      MAIN CONTAINER
-  ========================================================= */}
-
-  <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-
-    <div
-      className="
-        grid
-        lg:grid-cols-2
-        gap-14
-        lg:gap-20
-        items-center
-      "
-    >
-
-
-      {/* =====================================================
-          LEFT CONTENT
-      ===================================================== */}
-
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: -50,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        transition={{
-          duration: 0.8,
-          ease: "easeOut",
-        }}
-      >
-
-        {/* ================= SMALL TITLE ================= */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -20,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="
-            flex
-            items-center
-            gap-3
-            mb-6
-          "
-        >
-
-          <span
-            className="
-              w-10
-              h-[2px]
-              bg-blue-600
-            "
-          />
-
-          <p
-            className="
-              text-blue-600
-              text-xs
-              sm:text-sm
-              font-bold
-              tracking-[0.2em]
-              uppercase
-            "
-          >
-            About Our Frozen Meat
-          </p>
-
-        </motion.div>
-
-
-        {/* ================= MAIN HEADING ================= */}
-
-        <h2
-          className="
-            text-4xl
-            sm:text-5xl
-            lg:text-[54px]
-            font-bold
-            tracking-[-0.04em]
-            leading-[1.06]
-            text-[#071426]
-          "
-        >
-
-          <motion.span
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.1,
-              duration: 0.7,
-            }}
-            className="block"
-          >
-
-            <span className="text-[#16A34A]">
-              Halal
-            </span>{" "}
-
-            Frozen Buffalo Meat
-
-          </motion.span>
-
-
-          <motion.span
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.2,
-              duration: 0.7,
-            }}
-            className="
-              block
-              mt-3
-              bg-gradient-to-r
-              from-blue-600
-              via-blue-500
-              to-cyan-500
-              bg-clip-text
-              text-transparent
-            "
-          >
-            Exporter From India
-          </motion.span>
-
-        </h2>
-
-
-        {/* ================= DESCRIPTION ================= */}
-
-        <motion.p
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            delay: 0.35,
-            duration: 0.7,
-          }}
-          className="
-            text-[#334155]
-            text-base
-            lg:text-lg
-            leading-8
-            mt-7
-            max-w-[650px]
-          "
-        >
-
-          We are a trusted exporter of premium frozen buffalo meat,
-          specializing in{" "}
-
-          <span
-            className="
-              font-semibold
-              text-[#16A34A]
-            "
-          >
-            halal boneless buffalo meat
-          </span>{" "}
-
-          and a wide range of buffalo cuts. With a strong focus on
-          food safety, quality control and international export
-          standards, we provide reliable supply solutions to
-          importers, distributors and food service buyers across
-          global markets.
-
-        </motion.p>
-
-
-        {/* =====================================================
-            FEATURES
-        ===================================================== */}
-
-        <div
-          className="
-            grid
-            sm:grid-cols-2
-            gap-5
-            mt-9
-          "
-        >
-
-
-          {/* ================= QUALITY ================= */}
-
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1450px] items-center px-6 lg:px-12">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.45,
-              duration: 0.6,
-            }}
-            whileHover={{
-              y: -5,
-            }}
-            className="
-              group
-              flex
-              items-start
-              gap-3
-              p-4
-              rounded-2xl
-              bg-slate-50
-              border
-              border-slate-100
-              hover:border-blue-100
-              hover:bg-blue-50/40
-              transition-all
-              duration-300
-            "
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-[760px] pt-24 pb-32"
           >
-
-            <div
-              className="
-                w-11
-                h-11
-                shrink-0
-                rounded-xl
-                bg-blue-600/10
-                flex
-                items-center
-                justify-center
-                group-hover:bg-blue-600/15
-                transition-colors
-              "
-            >
-
-              <ShieldCheck
-                size={21}
-                className="text-blue-600"
-              />
-
-            </div>
-
-
-            <div>
-
-              <h3
-                className="
-                  text-sm
-                  font-bold
-                  text-[#071426]
-                "
-              >
-                Quality Controlled
-              </h3>
-
-              <p
-                className="
-                  text-xs
-                  text-[#475569]
-                  mt-1
-                  leading-5
-                "
-              >
-                Strict quality and food safety practices
-              </p>
-
-            </div>
-
-          </motion.div>
-
-
-          {/* ================= GLOBAL SUPPLY ================= */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.55,
-              duration: 0.6,
-            }}
-            whileHover={{
-              y: -5,
-            }}
-            className="
-              group
-              flex
-              items-start
-              gap-3
-              p-4
-              rounded-2xl
-              bg-slate-50
-              border
-              border-slate-100
-              hover:border-blue-100
-              hover:bg-blue-50/40
-              transition-all
-              duration-300
-            "
-          >
-
-            <div
-              className="
-                w-11
-                h-11
-                shrink-0
-                rounded-xl
-                bg-blue-600/10
-                flex
-                items-center
-                justify-center
-                group-hover:bg-blue-600/15
-                transition-colors
-              "
-            >
-
-              <Globe2
-                size={21}
-                className="text-blue-600"
-              />
-
-            </div>
-
-
-            <div>
-
-              <h3
-                className="
-                  text-sm
-                  font-bold
-                  text-[#071426]
-                "
-              >
-                Global Supply
-              </h3>
-
-              <p
-                className="
-                  text-xs
-                  text-[#475569]
-                  mt-1
-                  leading-5
-                "
-              >
-                Reliable supply for international buyers
-              </p>
-
-            </div>
-
-          </motion.div>
-
-        </div>
-
-
-        {/* =====================================================
-            STATS
-        ===================================================== */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            delay: 0.7,
-            duration: 0.7,
-          }}
-          className="
-            flex
-            flex-wrap
-            items-center
-            gap-7
-            sm:gap-8
-            mt-10
-            pt-8
-            border-t
-            border-gray-100
-          "
-        >
-
-          {/* 100% */}
-
-          <div>
-
-            <p
-              className="
-                text-3xl
-                font-bold
-                text-[#071426]
-              "
-            >
-              100%
-            </p>
-
-            <p
-              className="
-                text-xs
-                text-[#475569]
-                mt-1
-              "
-            >
-              Quality Focus
-            </p>
-
-          </div>
-
-
-          <div
-            className="
-              hidden
-              sm:block
-              w-px
-              h-10
-              bg-gray-200
-            "
-          />
-
-
-          {/* HALAL */}
-
-          <div>
-
-            <p
-              className="
-                text-3xl
-                font-bold
-                text-[#16A34A]
-              "
-            >
-              Halal
-            </p>
-
-            <p
-              className="
-                text-xs
-                text-[#475569]
-                mt-1
-              "
-            >
-              Certified Supply
-            </p>
-
-          </div>
-
-
-          <div
-            className="
-              hidden
-              sm:block
-              w-px
-              h-10
-              bg-gray-200
-            "
-          />
-
-
-          {/* GLOBAL */}
-
-          <div>
-
-            <p
-              className="
-                text-3xl
-                font-bold
-                text-[#071426]
-              "
-            >
-              Global
-            </p>
-
-            <p
-              className="
-                text-xs
-                text-[#475569]
-                mt-1
-              "
-            >
-              Export Markets
-            </p>
-
-          </div>
-
-        </motion.div>
-
-      </motion.div>
-
-
-      {/* =====================================================
-          RIGHT IMAGE
-      ===================================================== */}
-
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: 50,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.25,
-        }}
-        transition={{
-          duration: 0.9,
-          ease: "easeOut",
-        }}
-        className="
-          relative
-          mt-8
-          lg:mt-0
-        "
-      >
-
-        {/* ================= IMAGE ================= */}
-
-        <motion.div
-          whileHover={{
-            scale: 1.015,
-          }}
-          transition={{
-            duration: 0.4,
-          }}
-          className="
-            relative
-            rounded-[28px]
-            overflow-hidden
-            shadow-[0_25px_80px_rgba(15,23,42,0.18)]
-          "
-        >
-
-          <motion.img
-            src={frozenMeatHero}
-            alt="Premium frozen buffalo meat"
-            initial={{
-              scale: 1.05,
-            }}
-            whileInView={{
-              scale: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 1.2,
-              ease: "easeOut",
-            }}
-            className="
-              w-full
-              h-[450px]
-              sm:h-[520px]
-              lg:h-[600px]
-              object-cover
-            "
-          />
-
-
-          {/* IMAGE DARK GRADIENT */}
-
-          <div
-            className="
-              absolute
-              inset-0
-              bg-gradient-to-t
-              from-[#020812]/80
-              via-[#020812]/10
-              to-transparent
-            "
-          />
-
-
-          {/* ================= IMAGE LABEL ================= */}
-
-          <div
-            className="
-              absolute
-              left-6
-              right-6
-              bottom-6
-              flex
-              items-end
-              justify-between
-              gap-4
-            "
-          >
-
-            <div>
-
-              <p
-                className="
-                  text-white/70
-                  text-[10px]
-                  sm:text-xs
-                  uppercase
-                  tracking-[0.2em]
-                "
-              >
-                Premium Indian Export
-              </p>
-
-              <h3
-                className="
-                  text-white
-                  text-xl
-                  sm:text-2xl
-                  font-bold
-                  mt-1
-                "
-              >
-                Frozen Buffalo Meat
-              </h3>
-
-            </div>
-
-
             <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: 5,
-              }}
-              className="
-                shrink-0
-                w-11
-                h-11
-                sm:w-12
-                sm:h-12
-                rounded-full
-                bg-white/10
-                backdrop-blur-md
-                border
-                border-white/20
-                flex
-                items-center
-                justify-center
-              "
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.25, duration: 0.7 }}
+              className="mb-8 inline-flex items-center gap-3 rounded-full border border-blue-200 bg-white px-5 py-2.5 shadow-[0_8px_30px_rgba(37,99,235,0.15)]"
             >
-
-              <ArrowUpRight
-                size={20}
-                className="text-white"
-              />
-
+              <span className="relative flex h-2.5 w-2.5">
+                <motion.span
+                  className="absolute inline-flex h-full w-full rounded-full bg-blue-500"
+                  animate={{ scale: [1, 2, 1], opacity: [0.7, 0, 0.7] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="relative h-2.5 w-2.5 rounded-full bg-blue-600" />
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#071426] md:text-xs">
+                Frozen Meat Export
+              </span>
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity }}
+                className="font-bold text-blue-600"
+              >
+                →
+              </motion.span>
             </motion.div>
 
-          </div>
+            <h1 className="font-black leading-[0.94] tracking-[-0.045em] text-5xl sm:text-6xl lg:text-[78px]">
+              <motion.span
+                className="block text-[#071426] drop-shadow-[0_3px_10px_rgba(255,255,255,0.7)]"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.8 }}
+              >
+                Premium Frozen
+              </motion.span>
 
-        </motion.div>
+              <motion.span
+                className="mt-3 block bg-gradient-to-r from-[#2563EB] via-[#06B6D4] to-[#16A34A] bg-[length:200%_auto] bg-clip-text font-black text-transparent"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  backgroundPosition: ["0% center", "100% center", "0% center"],
+                }}
+                transition={{
+                  opacity: { delay: 0.5, duration: 0.8 },
+                  y: { delay: 0.5, duration: 0.8 },
+                  backgroundPosition: {
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "linear",
+                  },
+                }}
+              >
+                Buffalo Meat
+              </motion.span>
 
+              <motion.span
+                className="mt-3 block bg-gradient-to-r from-[#DC2626] via-[#F97316] to-[#EAB308] bg-clip-text font-black text-transparent"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.8 }}
+              >
+                From India
+              </motion.span>
+            </h1>
 
-        {/* =================================================
-            HALAL CERTIFIED FLOATING CARD
-        ================================================= */}
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.8 }}
+              className="mt-8 max-w-[630px] text-base font-medium leading-8 text-[#172033] md:text-lg"
+            >
+              Supplying premium frozen buffalo meat and selected meat products
+              to importers, distributors and food service buyers across
+              international markets.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <motion.a
+                href="#products"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="group flex items-center gap-3 overflow-hidden rounded-2xl border border-white/50 bg-gradient-to-r from-[#2563EB] via-[#0891B2] to-[#06B6D4] px-7 py-4 text-base font-bold text-white shadow-[0_12px_35px_rgba(37,99,235,0.45)] transition-all duration-300 hover:shadow-[0_18px_50px_rgba(6,182,212,0.55)]"
+              >
+                <span>View Product Range</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
+                  <ArrowRight size={17} />
+                </span>
+              </motion.a>
+
+              <Link to="/contact">
+                <motion.div
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex items-center gap-3 rounded-2xl border-2 border-[#38BDF8] bg-[#071426] px-7 py-4 text-base font-bold text-white shadow-[0_10px_30px_rgba(7,20,38,0.35)] transition-all duration-300 hover:bg-[#0B1F3A]"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">
+                    <ArrowUpRight size={17} />
+                  </span>
+                  <span>Contact Us</span>
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="mt-12 flex max-w-[720px] flex-wrap items-center gap-x-8 gap-y-5 border-t border-slate-300/70 pt-7"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200 bg-blue-50">
+                  <ShieldCheck size={20} className="text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[#071426]">Quality Focus</p>
+                  <p className="mt-0.5 text-xs text-[#475569]">Export Grade</p>
+                </div>
+              </div>
+
+              <div className="hidden h-9 w-px bg-slate-300 sm:block" />
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-200 bg-cyan-50">
+                  <Globe2 size={20} className="text-cyan-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[#071426]">Global Supply</p>
+                  <p className="mt-0.5 text-xs text-[#475569]">International Markets</p>
+                </div>
+              </div>
+
+              <div className="hidden h-9 w-px bg-slate-300 sm:block" />
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-green-200 bg-green-50">
+                  <Truck size={20} className="text-green-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[#071426]">Cold Chain</p>
+                  <p className="mt-0.5 text-xs text-[#475569]">Reliable Delivery</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            delay: 0.5,
-            duration: 0.7,
-          }}
-          animate={{
-            y: [0, -7, 0],
-          }}
-          className="
-            absolute
-            -bottom-7
-            left-4
-            sm:left-7
-            bg-white
-            rounded-2xl
-            shadow-[0_15px_50px_rgba(15,23,42,0.15)]
-            border
-            border-green-100
-            px-4
-            sm:px-5
-            py-4
-            flex
-            items-center
-            gap-3
-          "
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="absolute bottom-10 right-8 hidden items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] md:flex lg:right-12"
         >
-
-          {/* GREEN ICON */}
-
-          <div
-            className="
-              w-11
-              h-11
-              shrink-0
-              rounded-xl
-              bg-green-50
-              border
-              border-green-100
-              flex
-              items-center
-              justify-center
-            "
-          >
-
-            <ShieldCheck
-              size={22}
-              className="text-[#16A34A]"
-            />
-
-          </div>
-
-
-          {/* CARD TEXT */}
-
-          <div>
-
-            <p
-              className="
-                text-sm
-                font-bold
-                text-[#16A34A]
-              "
-            >
-              Halal Certified
-            </p>
-
-            <p
-              className="
-                text-xs
-                text-[#475569]
-                mt-0.5
-              "
-            >
-              Quality & Compliance
-            </p>
-
-          </div>
-
+          <span className="h-px w-8 bg-cyan-400" />
+          Premium Indian Export
         </motion.div>
+      </section>
+
+   
+
+      {/* ABOUT */}
+      <section className="relative overflow-hidden bg-[#FFFDF8] py-20 lg:py-28">
+       
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="mb-7 inline-flex items-center gap-3">
+                <span className="flex h-10 w-10 rotate-[-5deg] items-center justify-center rounded-[14px] border-2 border-[#CBE9BA] bg-[#E9F8E2]">
+                  🌿
+                </span>
+                <div>
+                  <div className="text-[11px] font-black uppercase tracking-[0.2em] text-[#16A34A]">
+                    About Our Frozen Meat
+                  </div>
+                  <div className="mt-1 h-1 w-12 rounded-full bg-[#16A34A]" />
+                </div>
+              </div>
+
+              <h2 className="text-[45px] font-black leading-[0.96] tracking-[-0.045em] text-[#071426] sm:text-[56px] lg:text-[62px]">
+                <span className="relative inline-block text-[#16A34A]">
+                  Halal
+                  <span className="absolute bottom-[-3px] left-1 right-1 -z-10 h-2 rounded-full bg-[#BFE7A7]" />
+                </span>{" "}
+                Frozen
+                <span className="block">Buffalo Meat</span>
+                <span className="mt-4 block bg-gradient-to-r from-[#2563EB] via-[#0891B2] to-[#06B6D4] bg-clip-text text-transparent">
+                  From India
+                </span>
+              </h2>
+
+              <p className="mt-7 max-w-[620px] text-base leading-8 text-[#475569] lg:text-[17px]">
+                We supply premium frozen buffalo meat and selected buffalo
+                cuts for international buyers, with a strong focus on product
+                consistency, food safety, controlled handling and dependable
+                export execution.
+              </p>
+
+              <div className="mt-9 grid max-w-[620px] grid-cols-3 gap-3">
+                <div className="rounded-[20px] border-2 border-[#CBEAFF] bg-[#EAF7FF] px-4 py-5">
+                  <div className="text-2xl font-black text-[#071426]">100%</div>
+                  <div className="mt-1 text-[10px] font-bold text-[#64748B] sm:text-xs">
+                    Quality Focus
+                  </div>
+                </div>
+
+                <div className="rounded-[20px] border-2 border-[#D4EDC6] bg-[#EEFAE8] px-4 py-5">
+                  <div className="text-2xl font-black text-[#16A34A]">Halal</div>
+                  <div className="mt-1 text-[10px] font-bold text-[#64748B] sm:text-xs">
+                    Certified Supply
+                  </div>
+                </div>
+
+                <div className="rounded-[20px] border-2 border-[#FDE7B0] bg-[#FFF8E5] px-4 py-5">
+                  <div className="text-2xl font-black text-[#D97706]">Export</div>
+                  <div className="mt-1 text-[10px] font-bold text-[#64748B] sm:text-xs">
+                    Market Ready
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-[30px] border-[6px] border-white bg-[#071426] shadow-[0_25px_70px_rgba(7,20,38,0.18)]">
+                <img
+                  src={buffaloCutsDiagram}
+                  alt="Buffalo meat cuts"
+                  className="h-[430px] w-70 object-cover object-center transition-transform duration-700 hover:scale-[1.03] sm:h-full"
+                />
 
 
-        {/* =================================================
-            DECORATIVE ELEMENTS
-        ================================================= */}
+          
+               
 
-        <motion.div
-          animate={{
-            rotate: [0, 10, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            -top-6
-            -right-6
-            w-24
-            h-24
-            rounded-full
-            border
-            border-blue-100
-            -z-10
-          "
-        />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-        <motion.div
-          animate={{
-            scale: [1, 1.08, 1],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            -bottom-10
-            -right-10
-            w-32
-            h-32
-            rounded-full
-            bg-blue-50
-            -z-10
-          "
-        />
-
-      </motion.div>
-
-    </div>
-
+     {/* PRODUCTS */}
+<section
+  id="products"
+  className="relative overflow-hidden bg-[#F7FAFC] py-16 sm:py-20 lg:py-24"
+>
+  {/* Background Decorations */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute -right-40 top-10 h-[400px] w-[400px] rounded-full bg-[#E8F5FF] opacity-70 blur-3xl" />
+    <div className="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#EEF7F2] opacity-70 blur-3xl" />
   </div>
 
-</section>
+  <div className="relative z-10 mx-auto max-w-[1450px] px-6 lg:px-12">
 
-
-
-
-{/* =========================================================
-    PRODUCTS — FULL SCREEN PREMIUM
-========================================================= */}
-
-<section
-  className="
-    relative
-    min-h-screen
-    w-full
-    overflow-hidden
-    bg-[#f6f8fb]
-    py-20
-    lg:py-24
-  "
->
-
-  {/* =====================================================
-      BACKGROUND GLOW
-  ===================================================== */}
-
-  <div
-    className="
-      pointer-events-none
-      absolute
-      -right-40
-      -top-40
-      h-[600px]
-      w-[600px]
-      rounded-full
-      bg-blue-100/50
-      blur-3xl
-    "
-  />
-
-  <div
-    className="
-      pointer-events-none
-      absolute
-      -bottom-40
-      -left-40
-      h-[550px]
-      w-[550px]
-      rounded-full
-      bg-cyan-100/40
-      blur-3xl
-    "
-  />
-
-
-  {/* =====================================================
-      MAIN CONTAINER
-  ===================================================== */}
-
-  <div
-    className="
-      relative
-      z-10
-      w-full
-      px-5
-      sm:px-8
-      lg:px-12
-      xl:px-16
-    "
-  >
-
-
-    {/* =====================================================
-        SECTION HEADER
-    ===================================================== */}
-
+    {/* SECTION HEADER */}
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 0.8,
-      }}
-      className="
-        mx-auto
-        mb-14
-        max-w-4xl
-        text-center
-      "
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mx-auto mb-12 max-w-3xl text-center"
     >
+      <div className="mb-4 flex items-center justify-center gap-3">
+        <span className="h-px w-10 bg-[#168FD0]" />
 
-      {/* Small Label */}
-
-      <div
-        className="
-          mb-5
-          flex
-          items-center
-          justify-center
-          gap-3
-        "
-      >
-
-        <span
-          className="
-            h-[2px]
-            w-12
-            bg-blue-600
-          "
-        />
-
-        <span
-          className="
-            text-xs
-            font-bold
-            uppercase
-            tracking-[0.25em]
-            text-blue-600
-            sm:text-sm
-          "
-        >
-          Premium Product Range
+        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#168FD0]">
+          Our Product Range
         </span>
 
-        <span
-          className="
-            h-[2px]
-            w-12
-            bg-blue-600
-          "
-        />
-
+        <span className="h-px w-10 bg-[#168FD0]" />
       </div>
 
-
-      {/* Heading */}
-
-      <h2
-        className="
-          text-4xl
-          font-bold
-          tracking-[-0.04em]
-          text-[#071426]
-          sm:text-5xl
-          lg:text-6xl
-          xl:text-7xl
-        "
-      >
-        Our Products
+      <h2 className="text-3xl font-black tracking-[-0.035em] text-[#071426] sm:text-4xl lg:text-5xl">
+        Premium Buffalo Meat
+        <span className="block text-[#168FD0]">
+          For Global Markets
+        </span>
       </h2>
 
-
-      {/* Description */}
-
-      <p
-        className="
-          mx-auto
-          mt-5
-          max-w-3xl
-          text-base
-          leading-8
-          text-[#475569]
-          sm:text-lg
-        "
-      >
-        Premium frozen buffalo meat and carefully selected cuts,
-        prepared to meet the requirements of international importers,
-        distributors and food service buyers.
+      <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#657789] sm:text-base">
+        Carefully selected frozen buffalo meat products prepared for
+        quality-conscious importers, distributors and food service buyers
+        worldwide.
       </p>
-
     </motion.div>
 
-
-    {/* =====================================================
-        PRODUCT GRID
-    ===================================================== */}
-
-    <div
-      className="
-        grid
-        w-full
-        gap-5
-        sm:grid-cols-2
-        xl:grid-cols-4
-      "
-    >
+    {/* PRODUCT GRID */}
+    <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
 
       {products.map((item, index) => {
-
-        /* ================================================
-           PRODUCT LINKS
-        ================================================ */
-
-        let productLink = "/contact";
-
-        if (index === 0) {
-          productLink = "/frozen-meat/hind-quarter";
-        }
-
-        if (index === 1) {
-          productLink = "/frozen-meat/fore-quarter";
-        }
-
-        if (index === 2) {
-          productLink = "/frozen-meat/veal";
-        }
-
-        if (index === 3) {
-          productLink = "/frozen-meat/offals";
-        }
-
+        const productLink = item.link || "#";
 
         return (
-
           <motion.div
-            key={index}
-
-            initial={{
-              opacity: 0,
-              y: 60,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            viewport={{
-              once: true,
-              amount: 0.1,
-            }}
-
+            key={item.title}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{
-              duration: 0.7,
-              delay: index * 0.12,
-              ease: [0.22, 1, 0.36, 1],
+              duration: 0.55,
+              delay: index * 0.07,
             }}
-
-            whileHover={{
-              y: -12,
-            }}
-
+            whileHover={{ y: -6 }}
             className="
               group
-              relative
               flex
-              min-h-[620px]
               flex-col
               overflow-hidden
-              rounded-[30px]
+              rounded-[20px]
               border
-              border-gray-200/70
+              border-[#E1E8EF]
               bg-white
-              shadow-[0_15px_50px_rgba(15,23,42,0.08)]
+              shadow-[0_8px_30px_rgba(0,41,85,0.06)]
               transition-all
-              duration-500
-              hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)]
+              duration-300
+              hover:border-[#168FD0]/30
+              hover:shadow-[0_18px_45px_rgba(0,41,85,0.13)]
             "
           >
 
+            {/* IMAGE AREA */}
+            <div className="relative h-[300px] w-full overflow-hidden bg-[#F3F6F8]">
 
-            {/* =================================================
-                PRODUCT IMAGE
-            ================================================= */}
-
-            <div
-              className="
-                relative
-                h-[430px]
-                w-full
-                shrink-0
-                overflow-hidden
-              "
-            >
-
-              <motion.img
+              {/* Product Image */}
+              <img
                 src={item.img}
                 alt={item.title}
-
+                loading="lazy"
+                decoding="async"
                 className="
                   h-full
                   w-full
-                  object-cover
+                  object-contain
                   object-center
+                  p-2
+                  transition-transform
+                  duration-700
+                  ease-out
+                  group-hover:scale-[1.04]
                 "
-
-                initial={{
-                  scale: 1,
-                }}
-
-                whileHover={{
-                  scale: 1.12,
-                }}
-
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                }}
               />
 
-
-              {/* Dark Gradient */}
-
+              {/* Bottom Gradient */}
               <div
                 className="
+                  pointer-events-none
                   absolute
-                  inset-0
+                  inset-x-0
+                  bottom-0
+                  h-32
                   bg-gradient-to-t
-                  from-black/90
-                  via-black/25
+                  from-[#020812]/85
+                  via-[#020812]/30
                   to-transparent
                 "
               />
 
-
-              {/* Blue Hover Glow */}
-
+              {/* Number Badge */}
               <div
                 className="
                   absolute
-                  inset-0
-                  bg-gradient-to-br
-                  from-blue-600/0
-                  via-transparent
-                  to-blue-500/30
-                  opacity-0
-                  transition-all
-                  duration-500
-                  group-hover:opacity-100
-                "
-              />
-
-
-              {/* =================================================
-                  PRODUCT NUMBER
-              ================================================= */}
-
-              <div
-                className="
-                  absolute
-                  left-6
-                  top-6
+                  left-5
+                  top-5
                   flex
-                  h-12
-                  w-12
+                  h-9
+                  w-9
                   items-center
                   justify-center
                   rounded-full
                   border
-                  border-white/25
-                  bg-black/30
-                  text-sm
+                  border-white/30
+                  bg-[#071426]/90
+                  text-[10px]
                   font-bold
                   text-white
-                  backdrop-blur-xl
+                  backdrop-blur-md
                 "
               >
                 {String(index + 1).padStart(2, "0")}
               </div>
 
-
-              {/* =================================================
-                  PREMIUM BADGE
-              ================================================= */}
-
+              {/* Premium Badge */}
               <div
                 className="
                   absolute
-                  right-6
-                  top-6
+                  right-5
+                  top-5
                   rounded-full
                   border
-                  border-white/20
-                  bg-white/10
-                  px-4
-                  py-2
-                  text-[10px]
+                  border-white/30
+                  bg-[#071426]/80
+                  px-3
+                  py-1.5
+                  text-[9px]
                   font-bold
                   uppercase
-                  tracking-[0.18em]
+                  tracking-[0.15em]
                   text-white
-                  backdrop-blur-xl
+                  backdrop-blur-md
                 "
               >
                 Premium
               </div>
 
-
-              {/* =================================================
-                  IMAGE TEXT
-              ================================================= */}
-
-              <div
-                className="
-                  absolute
-                  bottom-7
-                  left-7
-                  right-7
-                "
-              >
-
-                <p
-                  className="
-                    mb-2
-                    text-[10px]
-                    font-semibold
-                    uppercase
-                    tracking-[0.22em]
-                    text-blue-300
-                  "
-                >
-                  Frozen Meat Export
+              {/* Image Title */}
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[#8FD3F5]">
+                  Frozen Meat Collection
                 </p>
 
-
-                <h3
-                  className="
-                    text-2xl
-                    font-bold
-                    leading-tight
-                    text-white
-                    sm:text-3xl
-                  "
-                >
+                <h3 className="text-[21px] font-bold leading-tight tracking-[-0.02em] text-white">
                   {item.title}
                 </h3>
-
               </div>
-
             </div>
 
+            {/* CONTENT AREA */}
+            <div className="flex flex-1 flex-col p-5">
 
-            {/* =================================================
-                CARD CONTENT
-            ================================================= */}
-
-            <div
-              className="
-                flex
-                flex-1
-                flex-col
-                justify-between
-                p-7
-                lg:p-8
-              "
-            >
+              {/* Decorative Line */}
+              <div className="mb-4 flex items-center gap-2">
+                <span className="h-[2px] w-8 rounded-full bg-[#168FD0]" />
+                <span className="h-[2px] w-2 rounded-full bg-[#D7E1E9]" />
+              </div>
 
               {/* Description */}
-
-              <p
-                className="
-                  text-sm
-                  leading-7
-                  text-[#475569]
-                  lg:text-[15px]
-                "
-              >
+              <p className="min-h-[48px] text-[13px] leading-6 text-[#667789]">
                 {item.desc}
               </p>
 
+              {/* Bottom */}
+              <div className="mt-5">
 
-              {/* =================================================
-                  EXPLORE BUTTON
-              ================================================= */}
-
-              <Link
-                to={productLink}
-
-                className="
-                  group/button
-                  mt-8
-                  flex
-                  w-full
-                  items-center
-                  justify-between
-                  rounded-full
-                  bg-[#071426]
-                  px-6
-                  py-4
-                  text-sm
-                  font-semibold
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:bg-blue-600
-                  hover:shadow-[0_12px_35px_rgba(37,99,235,0.25)]
-                "
-              >
-
-                {/* SAME TEXT FOR ALL PRODUCTS */}
-
-                <span>
-                  Explore Product
-                </span>
-
-
-                {/* Arrow */}
-
-                <span
+                {/* Export Grade */}
+                <div
                   className="
+                    mb-4
                     flex
-                    h-9
-                    w-9
                     items-center
-                    justify-center
-                    rounded-full
-                    bg-white/10
-                    transition-all
-                    duration-300
-                    group-hover/button:translate-x-1
-                    group-hover/button:bg-white/20
+                    gap-2
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.08em]
+                    text-[#7A8B9B]
                   "
                 >
+                  <span
+                    className="
+                      flex
+                      h-6
+                      w-6
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#EAF5FB]
+                      text-[#168FD0]
+                    "
+                  >
+                    ✓
+                  </span>
 
-                  <ArrowRight
-                    size={17}
-                  />
+                  Export Grade
+                </div>
 
-                </span>
+                {/* View Product Button */}
+                <Link
+                  to={productLink}
+                  className="
+                    group/button
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+                    rounded-full
+                    bg-[#06182B]
+                    px-4
+                    py-3
+                    text-[12px]
+                    font-semibold
+                    tracking-wide
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:bg-[#168FD0]
+                  "
+                >
+                  <span>View Product</span>
 
-              </Link>
-
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-white/10
+                      transition-all
+                      duration-300
+                      group-hover/button:translate-x-1
+                    "
+                  >
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
             </div>
-
           </motion.div>
-
         );
       })}
-
     </div>
 
-
-    {/* =====================================================
-        TRUST BAR
-    ===================================================== */}
-
+    {/* BOTTOM FEATURES */}
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 30,
-      }}
-
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-
-      viewport={{
-        once: true,
-      }}
-
-      transition={{
-        duration: 0.7,
-        delay: 0.2,
-      }}
-
-      className="
-        mt-8
-        w-full
-        rounded-2xl
-        border
-        border-gray-200
-        bg-white
-        px-6
-        py-6
-        shadow-sm
-      "
-    >
-
-      <div
-        className="
-          grid
-          grid-cols-2
-          gap-5
-          sm:grid-cols-4
-        "
-      >
-
-
-        {/* =================================================
-            QUALITY
-        ================================================= */}
-
-        <div
-          className="
-            flex
-            items-center
-            justify-center
-            gap-3
-          "
-        >
-
-          <ShieldCheck
-            size={22}
-            className="text-blue-600"
-          />
-
-          <div>
-
-            <p
-              className="
-                text-xs
-                font-bold
-                text-[#071426]
-              "
-            >
-              Quality Controlled
-            </p>
-
-            <p
-              className="
-                text-[11px]
-                text-[#475569]
-              "
-            >
-              Export Grade
-            </p>
-
-          </div>
-
-        </div>
-
-
-        {/* =================================================
-            HALAL
-        ================================================= */}
-
-        <div
-          className="
-            flex
-            items-center
-            justify-center
-            gap-3
-          "
-        >
-
-          <ShieldCheck
-            size={22}
-            className="text-green-600"
-          />
-
-          <div>
-
-            <p
-              className="
-                text-xs
-                font-bold
-                text-[#071426]
-              "
-            >
-              Halal Supply
-            </p>
-
-            <p
-              className="
-                text-[11px]
-                text-[#475569]
-              "
-            >
-              Certified Products
-            </p>
-
-          </div>
-
-        </div>
-
-
-        {/* =================================================
-            GLOBAL
-        ================================================= */}
-
-        <div
-          className="
-            flex
-            items-center
-            justify-center
-            gap-3
-          "
-        >
-
-          <Globe2
-            size={22}
-            className="text-blue-600"
-          />
-
-          <div>
-
-            <p
-              className="
-                text-xs
-                font-bold
-                text-[#071426]
-              "
-            >
-              Global Markets
-            </p>
-
-            <p
-              className="
-                text-[11px]
-                text-[#475569]
-              "
-            >
-              International Supply
-            </p>
-
-          </div>
-
-        </div>
-
-
-        {/* =================================================
-            COLD CHAIN
-        ================================================= */}
-
-        <div
-          className="
-            flex
-            items-center
-            justify-center
-            gap-3
-          "
-        >
-
-          <Truck
-            size={22}
-            className="text-blue-600"
-          />
-
-          <div>
-
-            <p
-              className="
-                text-xs
-                font-bold
-                text-[#071426]
-              "
-            >
-              Cold Chain
-            </p>
-
-            <p
-              className="
-                text-[11px]
-                text-[#475569]
-              "
-            >
-              Reliable Delivery
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </motion.div>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-{/* CTA */}
-
-
-{/* =========================================================
-    PREMIUM CTA SECTION
-========================================================= */}
-
-<section
-  className="
-    relative
-    overflow-hidden
-    bg-[#002955]
-    py-24
-    lg:py-32
-  "
->
-
-  {/* =====================================================
-      BACKGROUND GLOWS
-  ===================================================== */}
-
-  <div
-    className="
-      pointer-events-none
-      absolute
-      -left-40
-      -top-40
-      h-[500px]
-      w-[500px]
-      rounded-full
-      bg-blue-400/10
-      blur-[120px]
-    "
-  />
-
-  <div
-    className="
-      pointer-events-none
-      absolute
-      -right-40
-      -bottom-40
-      h-[500px]
-      w-[500px]
-      rounded-full
-      bg-cyan-400/10
-      blur-[120px]
-    "
-  />
-
-
-  {/* =====================================================
-      DECORATIVE GRID
-  ===================================================== */}
-
-  <div
-    className="
-      pointer-events-none
-      absolute
-      inset-0
-      opacity-[0.06]
-    "
-    style={{
-      backgroundImage:
-        "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-      backgroundSize: "70px 70px",
-    }}
-  />
-
-
-  {/* =====================================================
-      CONTENT
-  ===================================================== */}
-
-  <div
-    className="
-      relative
-      z-10
-      mx-auto
-      max-w-5xl
-      px-6
-      text-center
-      lg:px-8
-    "
-  >
-
-    {/* =================================================
-        TOP BADGE
-    ================================================= */}
-
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 20,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.7,
-      }}
-      className="
-        mx-auto
-        mb-7
-        inline-flex
-        items-center
-        gap-3
-        rounded-full
-        border
-        border-white/15
-        bg-white/[0.07]
-        px-5
-        py-2.5
-        backdrop-blur-xl
-      "
-    >
-
-      <span className="relative flex h-2.5 w-2.5">
-
-        <motion.span
-          className="
-            absolute
-            inline-flex
-            h-full
-            w-full
-            rounded-full
-            bg-green-400
-          "
-          animate={{
-            scale: [1, 1.8, 1],
-            opacity: [0.7, 0, 0.7],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-          }}
-        />
-
-        <span
-          className="
-            relative
-            inline-flex
-            h-2.5
-            w-2.5
-            rounded-full
-            bg-green-400
-          "
-        />
-
-      </span>
-
-
-      <span
-        className="
-          text-[10px]
-          font-bold
-          uppercase
-          tracking-[0.25em]
-          text-blue-200
-          sm:text-xs
-        "
-      >
-        Global Frozen Meat Supply
-      </span>
-
-    </motion.div>
-
-
-    {/* =================================================
-        HEADING
-    ================================================= */}
-
-    <motion.h2
-      initial={{
-        opacity: 0,
-        y: 35,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.8,
-        delay: 0.1,
-      }}
-      className="
-        text-4xl
-        font-bold
-        leading-tight
-        tracking-[-0.04em]
-        text-white
-        sm:text-5xl
-        lg:text-6xl
-        xl:text-7xl
-      "
-    >
-
-      Looking For{" "}
-
-      <span
-        className="
-          bg-gradient-to-r
-          from-blue-200
-          via-cyan-300
-          to-white
-          bg-clip-text
-          text-transparent
-        "
-      >
-        Bulk Frozen Meat
-      </span>
-
-      <br className="hidden sm:block" />
-
-      Supply?
-
-    </motion.h2>
-
-
-    {/* =================================================
-        DESCRIPTION
-    ================================================= */}
-
-    <motion.p
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.7,
-        delay: 0.25,
-      }}
-      className="
-        mx-auto
-        mt-6
-        max-w-2xl
-        text-base
-        leading-8
-        text-blue-100/75
-        sm:text-lg
-      "
-    >
-      Partner with us for premium quality frozen buffalo meat,
-      reliable supply, certified products and international
-      shipping solutions.
-    </motion.p>
-
-
-    {/* =================================================
-        CTA BUTTONS
-    ================================================= */}
-
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.7,
-        delay: 0.4,
-      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
       className="
         mt-10
         flex
         flex-col
         items-center
         justify-center
-        gap-4
+        gap-2
+        text-center
         sm:flex-row
+        sm:gap-4
       "
     >
+      {/* Reliable Supply */}
+      <span className="h-1.5 w-1.5 rounded-full bg-[#168FD0]" />
 
-      {/* PRIMARY */}
-
-      <motion.a
-        href="/contact"
-        whileHover={{
-          scale: 1.04,
-          boxShadow:
-            "0 20px 50px rgba(255,255,255,0.15)",
-        }}
-        whileTap={{
-          scale: 0.97,
-        }}
+      <span
         className="
-          group
-          flex
-          items-center
-          gap-3
-          rounded-full
-          bg-white
-          px-8
-          py-4
-          text-sm
-          font-bold
-          text-[#002955]
-          shadow-[0_10px_30px_rgba(0,0,0,0.15)]
-          transition-all
-          duration-300
-        "
-      >
-
-        <span>
-          Contact Us
-        </span>
-
-        <span
-          className="
-            flex
-            h-8
-            w-8
-            items-center
-            justify-center
-            rounded-full
-            bg-[#002955]/10
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
-        >
-          <ArrowRight size={16} />
-        </span>
-
-      </motion.a>
-
-
-      {/* SECONDARY */}
-
-      <motion.a
-        href="#products"
-        whileHover={{
-          scale: 1.03,
-          backgroundColor: "rgba(255,255,255,0.10)",
-        }}
-        whileTap={{
-          scale: 0.97,
-        }}
-        className="
-          flex
-          items-center
-          gap-3
-          rounded-full
-          border
-          border-white/20
-          bg-white/[0.04]
-          px-8
-          py-4
-          text-sm
+          text-[11px]
           font-semibold
-          text-white
-          backdrop-blur-xl
-          transition-all
-          duration-300
+          uppercase
+          tracking-[0.14em]
+          text-[#7A8B9B]
         "
       >
+        Reliable Supply
+      </span>
 
-        <span>
-          Explore Products
-        </span>
+      <span className="hidden h-4 w-px bg-[#D5DEE6] sm:block" />
 
-        <ArrowUpRight size={17} />
+      {/* Quality Controlled */}
+      <span
+        className="
+          text-[11px]
+          font-semibold
+          uppercase
+          tracking-[0.14em]
+          text-[#7A8B9B]
+        "
+      >
+        Quality Controlled
+      </span>
 
-      </motion.a>
+      <span className="hidden h-4 w-px bg-[#D5DEE6] sm:block" />
 
-    </motion.div>
-
-
-    {/* =================================================
-        TRUST POINTS
-    ================================================= */}
-
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.8,
-        delay: 0.6,
-      }}
-      className="
-        mx-auto
-        mt-14
-        flex
-        max-w-3xl
-        flex-wrap
-        items-center
-        justify-center
-        gap-x-8
-        gap-y-4
-        border-t
-        border-white/10
-        pt-8
-      "
-    >
-
-      {/* POINT 1 */}
-
-      <div className="flex items-center gap-2.5">
-
-        <ShieldCheck
-          size={18}
-          className="text-green-400"
-        />
-
-        <span
-          className="
-            text-xs
-            font-medium
-            text-blue-100/70
-          "
-        >
-          Quality Controlled
-        </span>
-
-      </div>
-
-
-      {/* POINT 2 */}
-
-      <div className="flex items-center gap-2.5">
-
-        <ShieldCheck
-          size={18}
-          className="text-green-400"
-        />
-
-        <span
-          className="
-            text-xs
-            font-medium
-            text-blue-100/70
-          "
-        >
-          Halal Supply
-        </span>
-
-      </div>
-
-
-      {/* POINT 3 */}
-
-      <div className="flex items-center gap-2.5">
-
-        <Globe2
-          size={18}
-          className="text-blue-300"
-        />
-
-        <span
-          className="
-            text-xs
-            font-medium
-            text-blue-100/70
-          "
-        >
-          Global Shipping
-        </span>
-
-      </div>
-
-
-      {/* POINT 4 */}
-
-      <div className="flex items-center gap-2.5">
-
-        <Truck
-          size={18}
-          className="text-blue-300"
-        />
-
-        <span
-          className="
-            text-xs
-            font-medium
-            text-blue-100/70
-          "
-        >
-          Reliable Cold Chain
-        </span>
-
-      </div>
-
+      {/* Export Ready */}
+      <span
+        className="
+          text-[11px]
+          font-semibold
+          uppercase
+          tracking-[0.14em]
+          text-[#7A8B9B]
+        "
+      >
+        Export Ready
+      </span>
     </motion.div>
 
   </div>
-
-
-  {/* =====================================================
-      DECORATIVE CIRCLES
-  ===================================================== */}
-
-  <motion.div
-    animate={{
-      rotate: [0, 360],
-    }}
-    transition={{
-      duration: 35,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-    className="
-      pointer-events-none
-      absolute
-      -right-24
-      top-1/2
-      hidden
-      h-72
-      w-72
-      -translate-y-1/2
-      rounded-full
-      border
-      border-white/5
-      lg:block
-    "
-  />
-
-  <motion.div
-    animate={{
-      rotate: [360, 0],
-    }}
-    transition={{
-      duration: 25,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-    className="
-      pointer-events-none
-      absolute
-      -left-20
-      top-1/2
-      hidden
-      h-48
-      w-48
-      -translate-y-1/2
-      rounded-full
-      border
-      border-blue-300/5
-      lg:block
-    "
-  />
-
 </section>
 
-</div>
+
+      
+   {/* CERTIFICATIONS */}
+      <section className="border-y border-slate-100 bg-white py-8">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-2 items-center justify-items-center gap-7 sm:grid-cols-3 md:grid-cols-6">
+            {certifications.map((item, index) => {
+              const Icon = item.Icon;
+
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08, duration: 0.5 }}
+                  whileHover={{ y: -4, scale: 1.04 }}
+                  className="flex min-h-[90px] flex-col items-center justify-center"
+                >
+                  <div className="flex h-14 w-32 items-center justify-center">
+                    {item.logo ? (
+                      <img
+                        src={item.logo}
+                        alt={`${item.name} certification`}
+                        className="max-h-14 max-w-[120px] object-contain"
+                      />
+                    ) : (
+                      <Icon
+                        size={48}
+                        strokeWidth={1.6}
+                        className="text-[#438A20]"
+                      />
+                    )}
+                  </div>
+                  <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#718096]">
+                    {item.name}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
 
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden bg-[#002955] py-20 lg:py-28">
+        <div className="pointer-events-none absolute -left-40 -top-40 h-[450px] w-[450px] rounded-full bg-blue-400/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-40 -right-40 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-)
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_15px_rgba(103,232,249,0.8)]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-blue-200/80">
+                  Global Frozen Meat Supply
+                </span>
+              </div>
 
-}
+              <h2 className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl xl:text-[68px]">
+                Looking For{" "}
+                <span className="bg-gradient-to-r from-[#8DD8FF] via-[#39BDF8] to-[#B8EDFF] bg-clip-text text-transparent">
+                  Bulk Frozen Meat
+                </span>
+                <br />
+                Supply?
+              </h2>
 
+              <p className="mt-7 max-w-2xl text-base leading-8 text-blue-100/65 sm:text-lg">
+                Partner with us for premium frozen buffalo meat, dependable
+                supply, certified products and smooth international shipping
+                solutions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="shrink-0"
+            >
+              <Link to="/contact">
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex items-center gap-4 rounded-xl bg-white px-7 py-4 text-sm font-semibold text-[#002955] shadow-[0_15px_40px_rgba(0,0,0,0.18)] transition-all duration-300"
+                >
+                  <span>Contact Our Export Team</span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#002955] text-white transition-transform duration-300 group-hover:translate-x-1">
+                    <ArrowRight size={16} />
+                  </span>
+                </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 border-t border-white/10 pt-7"
+          >
+            <div className="flex flex-col gap-4 text-xs text-blue-100/40 sm:flex-row sm:items-center sm:justify-between">
+              <span>Premium Frozen Buffalo Meat</span>
+              <span className="hidden h-px flex-1 bg-white/10 sm:mx-8 sm:block" />
+              <span>Reliable International Supply</span>
+              <span className="hidden h-px flex-1 bg-white/10 sm:mx-8 sm:block" />
+              <span>Export Ready</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
 
 export default FrozenMeat;
-
-
-
-
